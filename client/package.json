@@ -2,6 +2,7 @@
   "name": "groweasy-chat-client",
   "version": "1.0.0",
   "private": true,
+  "proxy": "http://localhost:3000",
   "dependencies": {
     "axios": "^1.6.2",
     "react": "^18.2.0",
