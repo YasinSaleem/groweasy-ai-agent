@@ -141,3 +141,48 @@ npm start
 - **React** (Frontend)  
 - **Google Gemini** (AI)  
 - **Supabase** (Database)
+
+## Configuration File Format
+
+The assistant uses a configuration file to understand how to qualify leads and drive conversation.
+
+### `realEstateConfig.json`
+
+```json
+{
+  "industry": "real estate",
+  "location": "Pune",
+  "qualifyingCriteria": [
+    "property type",
+    "budget range",
+    "location preference",
+    "timeline",
+    "purpose"
+  ],
+  "greeting": "Hi {name}! Thanks for reaching out. I'm your GrowEasy real estate assistant.",
+  "questions": [
+    "Could you share which city/location you're looking for?",
+    "Are you looking for a flat, villa, or plot?",
+    "Is this for investment or personal use?",
+    "What's your budget range? (e.g., 50L–80L)",
+    "What's your preferred timeline for this purchase?"
+  ],
+  "classificationRules": {
+    "hot": [
+      "clear budget specified",
+      "specific location mentioned",
+      "timeline under 6 months"
+    ],
+    "cold": [
+      "vague requirements",
+      "no urgency indicated",
+      "just browsing"
+    ],
+    "invalid": [
+      "gibberish responses",
+      "test entries",
+      "no meaningful engagement"
+    ]
+  }
+}
+```
