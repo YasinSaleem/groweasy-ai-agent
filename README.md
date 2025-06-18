@@ -2,8 +2,10 @@
 
 An AI-powered real estate assistant that qualifies leads through natural conversation.
 
+<h2>Landing Page</h2>
 <img width="1511" alt="Screenshot 2025-06-18 at 4 07 03 PM" src="https://github.com/user-attachments/assets/c66f1392-16c9-44ef-be35-56a8aa9f8154" />
-<h1>\n</h1>
+
+<h2>Main Chat Page</h2>
 <img width="1512" alt="Screenshot 2025-06-18 at 4 08 16 PM" src="https://github.com/user-attachments/assets/ab97db0b-a318-43ae-ae49-0270860f2a7c" />
 
 ## Features
