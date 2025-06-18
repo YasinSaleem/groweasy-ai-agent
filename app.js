@@ -8,7 +8,7 @@ const app = express();
 
 // Add CORS middleware before other middleware
 app.use(cors({
-  origin: 'http://localhost:3001', // React's default port
+  origin: 'https://groweasy-ai-agent.vercel.app', // React's default port
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type']
 }));
