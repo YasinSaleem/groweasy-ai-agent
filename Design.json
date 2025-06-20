@@ -1,0 +1,173 @@
+{
+    "name": "Monochrome Professional Design System",
+    "version": "1.0.0",
+    "description": "A clean, minimalist design system focusing on typography, spacing, and subtle interactions",
+    "colors": {
+      "primary": {
+        "black": "#000000",
+        "white": "#FFFFFF"
+      },
+      "gray": {
+        "50": "#F9FAFB",
+        "200": "#E5E7EB",
+        "400": "#9CA3AF",
+        "600": "#4B5563",
+        "800": "#1F2937"
+      }
+    },
+    "typography": {
+      "heading": {
+        "fontFamily": "system-ui",
+        "sizes": {
+          "h1": {
+            "fontSize": "1.875rem",
+            "lineHeight": "2.25rem",
+            "fontWeight": "700",
+            "letterSpacing": "-0.025em"
+          }
+        }
+      },
+      "body": {
+        "primary": {
+          "fontSize": "0.875rem",
+          "lineHeight": "1.25rem",
+          "color": "#111827"
+        },
+        "secondary": {
+          "fontSize": "0.75rem",
+          "lineHeight": "1rem",
+          "color": "#6B7280"
+        }
+      }
+    },
+    "spacing": {
+      "layout": {
+        "containerMaxWidth": "28rem",
+        "containerPadding": {
+          "mobile": "1rem",
+          "desktop": "1.5rem"
+        },
+        "verticalSpacing": {
+          "mobile": "3rem",
+          "desktop": "6rem"
+        }
+      },
+      "components": {
+        "sectionSpacing": "2rem",
+        "elementSpacing": "1.5rem",
+        "inlineSpacing": "0.5rem"
+      }
+    },
+    "components": {
+      "form": {
+        "container": {
+          "background": "white",
+          "width": "100%"
+        },
+        "header": {
+          "alignment": "center",
+          "spacing": "2rem",
+          "logo": {
+            "size": "2rem",
+            "padding": "0.75rem",
+            "border": "2px solid black",
+            "borderRadius": "9999px"
+          }
+        },
+        "inputGroup": {
+          "background": "#F9FAFB",
+          "padding": "1rem",
+          "borderRadius": "0.5rem",
+          "border": "1px solid #E5E7EB"
+        },
+        "input": {
+          "height": "2.75rem",
+          "padding": {
+            "left": "2.5rem",
+            "right": "0.75rem"
+          },
+          "icon": {
+            "size": "1.25rem",
+            "color": "#9CA3AF",
+            "position": {
+              "left": "0.75rem"
+            }
+          }
+        },
+        "button": {
+          "primary": {
+            "background": "black",
+            "color": "white",
+            "padding": "0.75rem 1rem",
+            "borderRadius": "0.5rem",
+            "hover": {
+              "background": "#1F2937"
+            },
+            "transition": "background-color 200ms"
+          }
+        }
+      }
+    },
+    "patterns": {
+      "formLayout": {
+        "structure": [
+          "header",
+          "inputGroup",
+          "submitButton",
+          "footer"
+        ],
+        "spacing": "1.5rem"
+      },
+      "visualHierarchy": {
+        "primary": {
+          "element": "heading",
+          "attributes": {
+            "size": "large",
+            "weight": "bold",
+            "color": "black"
+          }
+        },
+        "secondary": {
+          "element": "subheading",
+          "attributes": {
+            "size": "medium",
+            "weight": "normal",
+            "color": "gray.600"
+          }
+        }
+      }
+    },
+    "interactions": {
+      "hover": {
+        "button": {
+          "transform": "none",
+          "transition": "background-color 200ms ease"
+        },
+        "input": {
+          "border": "none",
+          "outline": "none"
+        }
+      },
+      "focus": {
+        "input": {
+          "ring": "none",
+          "outline": "none"
+        }
+      }
+    },
+    "designTokens": {
+      "borderRadius": {
+        "small": "0.375rem",
+        "medium": "0.5rem",
+        "large": "0.75rem",
+        "full": "9999px"
+      },
+      "shadows": {
+        "none": "none"
+      },
+      "borders": {
+        "thin": "1px solid #E5E7EB",
+        "medium": "2px solid #000000"
+      }
+    }
+  }

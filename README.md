@@ -5,7 +5,13 @@ An AI-powered real estate assistant that qualifies leads through natural convers
 <h2>Landing Page</h2>
 <img width="1511" alt="Screenshot 2025-06-18 at 4 07 03 PM" src="https://github.com/user-attachments/assets/c66f1392-16c9-44ef-be35-56a8aa9f8154" />
 
+
+<h2>Chat Page</h2>
+<img width="1512" alt="Screenshot 2025-06-20 at 6 04 42 PM" src="https://github.com/user-attachments/assets/57f899d3-59f5-44e2-8f2c-8eac64c6b36f" />
+
+
 <h2>Main Chat Page</h2>
+
 <img width="1512" alt="Screenshot 2025-06-18 at 4 08 16 PM" src="https://github.com/user-attachments/assets/ab97db0b-a318-43ae-ae49-0270860f2a7c" />
 
 ## Features
@@ -186,3 +192,6 @@ The assistant uses a configuration file to understand how to qualify leads and d
   }
 }
 ```
+
+
+
