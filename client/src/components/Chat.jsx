@@ -1,6 +1,24 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 
+const ICONS = {
+  user: '👤',
+  phone: '📞',
+  'arrow-right': '→',
+  circular: '💬',
+};
+
+const ProgressDots = ({ count, activeIndex }) => (
+  <div className="progress-dots">
+    {[...Array(count)].map((_, i) => (
+      <span
+        key={i}
+        className={`dot${i === activeIndex ? ' active' : ''}`}
+      />
+    ))}
+  </div>
+);
+
 const Chat = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
@@ -59,9 +77,9 @@ const Chat = () => {
       setMessages(prev => [...prev, { text: response.data.response, sender: 'agent' }]);
     } catch (error) {
       console.error('Error sending message:', error);
-      setMessages(prev => [...prev, { 
-        text: "Sorry, I encountered an error. Please try again.", 
-        sender: 'agent' 
+      setMessages(prev => [...prev, {
+        text: "Sorry, I encountered an error. Please try again.",
+        sender: 'agent'
       }]);
     }
   };
@@ -74,52 +92,76 @@ const Chat = () => {
   };
 
   return (
-    <div className="chat-container">
-      <div className="chat-header">
-        <h2>GrowEasy Real Estate Assistant</h2>
-      </div>
+    <div className="chat-outer-container">
+      <div className="chat-container minimalist">
+        <header className="chat-header">
+          <div className="chat-header-icon">{ICONS.circular}</div>
+          <h2 className="chat-title">Groweasy Real Estate Assistant</h2>
+          <div className="chat-subtitle">Your AI-powered property guide</div>
+        </header>
 
-      <div className="chat-messages">
-        {messages.map((msg, index) => (
-          <div key={index} className={`message ${msg.sender}`}>
-            <div className="message-content">
-              {msg.text.split('\n').map((line, i) => (
-                <p key={i}>{line}</p>
-              ))}
+        <main className="chat-messages">
+          {messages.map((msg, index) => (
+            <div key={index} className={`message ${msg.sender}`}>
+              <div className="message-content">
+                {msg.text.split('\n').map((line, i) => (
+                  <p key={i}>{line}</p>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
-        <div ref={messagesEndRef} />
-      </div>
+          ))}
+          <div ref={messagesEndRef} />
+        </main>
 
-      {isStarting ? (
-        <div className="chat-input-start">
-          <input
-            type="text"
-            placeholder="Your Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <input
-            type="tel"
-            placeholder="Phone Number"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-          />
-          <button onClick={startChat}>Start Chat</button>
-        </div>
-      ) : (
-        <div className="chat-input">
-          <input
-            type="text"
-            placeholder="Type your message..."
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyPress={handleKeyPress}
-          />
-          <button onClick={sendMessage}>Send</button>
-        </div>
-      )}
+        {isStarting ? (
+          <form className="chat-input-start" onSubmit={e => { e.preventDefault(); startChat(); }}>
+            <div className="input-with-icon">
+              <span className="input-icon">{ICONS.user}</span>
+              <input
+                type="text"
+                placeholder="Your full name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="minimal-input"
+                required
+              />
+            </div>
+            <div className="input-with-icon">
+              <span className="input-icon">{ICONS.phone}</span>
+              <input
+                type="tel"
+                placeholder="Your phone number"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                className="minimal-input"
+                required
+              />
+            </div>
+            <button type="submit" className="submit-btn">
+              Submit <span className="btn-icon">{ICONS['arrow-right']}</span>
+            </button>
+          </form>
+        ) : (
+          <div className="chat-input">
+            <input
+              type="text"
+              placeholder="Type your message..."
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyPress={handleKeyPress}
+              className="minimal-input"
+            />
+            <button onClick={sendMessage} className="submit-btn">
+              Send <span className="btn-icon">{ICONS['arrow-right']}</span>
+            </button>
+          </div>
+        )}
+
+        <footer className="chat-footer">
+          <div className="security-note">Your information is secure</div>
+          <ProgressDots count={3} activeIndex={isStarting ? 0 : 1} />
+        </footer>
+      </div>
     </div>
   );
 };
